@@ -1,0 +1,13 @@
+package kodlamaio.HumanResourceManagementSystem.dataAccess;
+
+import kodlamaio.HumanResourceManagementSystem.entities.concretes.WorkplaceCandidate;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+
+public interface WorkplaceCandidateDao extends JpaRepository<WorkplaceCandidate,Integer> {
+
+    List<WorkplaceCandidate> getByCandidate_Id(int candidateId);
+    List<WorkplaceCandidate> getByCandidate_IdOrderByDateOfQuitDesc(int candidateId);
+}
